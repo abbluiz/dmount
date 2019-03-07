@@ -12,13 +12,13 @@ else
     mkdir ~/.dmount-tmp
 fi
 
-git clone https://github.com/abbluiz/upgrade-linux-apps.git ~/.dmount-tmp
+git clone https://github.com/abbluiz/dmount.git ~/.dmount-tmp
 
 # TODO: diff
 
 ~/.dmount-tmp/dmount-install.sh
 
 echo "Deleting temporary directory ~/.dmount-tmp"
-# rm -rf ~/.dmount-tmp
+rm -rf ~/.dmount-tmp
 
 echo "All scripts updated from git."
