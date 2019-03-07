@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 
+   echo "This script must be run as root." 
    exit 1
 fi
 
@@ -12,12 +12,12 @@ script[1]="dmount-uninstall"
 script[2]="dmount"
 script[3]="dunmount"
 
-function updatingOrInstalling($i) {
+updatingOrInstalling() {
 
-    if [ -x "$installPath/$i" ]; then
-        return "Updating"
+    if [ -x "$2/$3" ]; then
+        report="Updating"
     else
-        return "Installing"
+        report="Installing"
     fi
 
 }
@@ -25,10 +25,11 @@ function updatingOrInstalling($i) {
 for i in ${script[@]}
 do 
 
-    updatingOrInstalling=updatingOrInstalling($i)
-    echo "$updatingOrInstalling $i..."
+    report=""
+    updatingOrInstalling $report $installPath $i
+    echo "$report $i..."
     install "$i.sh" "$installPath/$i"
-    
+
 done
 
-echo "dmount installed."
+echo "All scripts installed and updated."

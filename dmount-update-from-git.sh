@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 
+   echo "This script must be run as root." 
    exit 1
 fi
 
@@ -18,4 +18,7 @@ git clone https://github.com/abbluiz/upgrade-linux-apps.git ~/.dmount-tmp
 
 ~/.dmount-tmp/dmount-install.sh
 
+echo "Deleting temporary directory ~/.dmount-tmp"
 rm -rf ~/.dmount-tmp
+
+echo "All scripts updated from git."
