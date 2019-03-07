@@ -25,7 +25,7 @@ updatingOrInstalling() {
 for i in ${script[@]}
 do 
 
-    report=""
+    report="Installing/Updating"
     updatingOrInstalling $report $installPath $i
     echo "$report $i..."
     install "$i.sh" "$installPath/$i"

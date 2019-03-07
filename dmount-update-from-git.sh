@@ -19,6 +19,6 @@ git clone https://github.com/abbluiz/upgrade-linux-apps.git ~/.dmount-tmp
 ~/.dmount-tmp/dmount-install.sh
 
 echo "Deleting temporary directory ~/.dmount-tmp"
-rm -rf ~/.dmount-tmp
+# rm -rf ~/.dmount-tmp
 
 echo "All scripts updated from git."
