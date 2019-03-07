@@ -18,7 +18,7 @@ if [[ "$1" == "label" && $# -eq 2 ]]; then
 
 		if [ ! -d "$defaultDeviceDir" ]; then
 
-			echo "Creating device directory on $defaultDeviceDirectory"
+			echo "Creating device directory on $defaultDeviceDir"
 			echo "Creating mountpoint directory on $defaultMountpointDir"
 			mkdir $defaultDeviceDir
 			mkdir $defaultMountpointDir
