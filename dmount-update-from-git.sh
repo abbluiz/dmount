@@ -5,20 +5,20 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-if [ ! -e "~/.dmount-tmp" ]; then
-    mkdir ~/.dmount-tmp
+if [ ! -e "$HOME/.dmount-tmp" ]; then
+    mkdir $HOME/.dmount-tmp
 else
-    rm -rf ~/.dmount-tmp
-    mkdir ~/.dmount-tmp
+    rm -rf $HOME/.dmount-tmp
+    mkdir $HOME/.dmount-tmp
 fi
 
-git clone https://github.com/abbluiz/dmount.git ~/.dmount-tmp
+git clone https://github.com/abbluiz/dmount.git $HOME/.dmount-tmp
 
 # TODO: diff
 
-~/.dmount-tmp/dmount-install.sh
+$HOME/.dmount-tmp/dmount-install.sh
 
 echo "Deleting temporary directory ~/.dmount-tmp"
-rm -rf ~/.dmount-tmp
+rm -rf $HOME/.dmount-tmp
 
 echo "All scripts updated from git."
